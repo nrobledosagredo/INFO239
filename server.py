@@ -15,16 +15,16 @@ UDPServerSocket.bind((localIP, localPort))
 print("Link Available")
 
 # Listen for incoming datagrams
-while(True):
-    
+while(True): 
     bytesAddressPair = UDPServerSocket.recvfrom(bufferSize)
     message = bytesAddressPair[0]
     address = bytesAddressPair[1]
     #clientMsg = "Message from Client:{}".format(message)
-    print("Link bussy")
+    print("Link busy")
     clientMsg = format(message) 
     print(clientMsg)
     time.sleep(30)
+    
     # Sending a reply to client
     UDPServerSocket.sendto(bytesToSend, address)
     print("Link Available")
